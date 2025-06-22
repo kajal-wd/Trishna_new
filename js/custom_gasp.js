@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     var screenWidth = window.innerWidth;
     var screenHeight = window.innerHeight;
     gsap.registerPlugin(SplitText);
-
+    gsap.registerPlugin(ScrollTrigger);
     t.from(".packet-1", {
         y: -1000,
         duration: 0.3,
@@ -188,13 +188,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ease: "back.out"
     })
 
-    t.to(".hero-container",{
-        borderRadius:"60px 60px 0 0",
-        
-    },"<")
+    t.to(".hero-container", {
+        borderRadius: "60px 60px 0 0",
 
-    t.to(".hero-container-section",{
-        padding:"15px 15px 0 15px"
+    }, "<")
+
+    t.to(".hero-container-section", {
+        padding: "15px 15px 0 15px"
     })
 
 
@@ -218,7 +218,62 @@ document.addEventListener("DOMContentLoaded", (event) => {
         stagger: 0.05,
         ease: "power2.out"
     });
+
+
+    let f = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".choose_us", // element that triggers the animation
+            start: "top 70%",           // when the top of trigger hits 80% of viewport
+            toggleActions: "play none none none", // play on enter only
+            markers: false              // set to true if you want to see debug markers
+        }
+    });
+
+    f.from(".choose_us_left img", {
+        opacity: 0,
+        x: -100,
+        duration: 2,
+        ease: "back.out",
+        onComplete: () => {
+            gsap.to(".choose_us_pac1", {
+                scale:0.95,
+                repeat: -1,
+                yoyo: true,
+                duration: 1.04
+            })
+        }
+    })
+    f.from(".choose_us_heading", {
+        opacity: 0,
+        y: -30
+    }, "<")
+    f.from(".list-1", {
+        opacity: 0,
+        y: -30
+    })
+    f.from(".list-2", {
+        opacity: 0,
+        y: -30
+    })
+    f.from(".list-3", {
+        opacity: 0,
+        y: -30
+    })
+    f.from(".list-4", {
+        opacity: 0,
+        y: -30
+    })
+    f.from(".list-5", {
+        opacity: 0,
+        y: -30
+    })
+    f.from(".list-6", {
+        opacity: 0,
+        y: -30
+    })
 });
+
+
 
 
 // gsap.registerPlugin(SplitText);
