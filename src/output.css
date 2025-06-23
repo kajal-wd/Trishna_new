@@ -788,9 +788,10 @@ header ul li {
 }
 footer {
   background-image: url(../image/5\ -\ Copy.png);
-  background-position: top center;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 210px;
 }
 .banner-slider .swiper-slide {
   transition: all 0.5s ease-in-out;
