@@ -15,10 +15,10 @@ header ul li {
 }
 
 .all-packet-main-section {
-  background: url(../image/all_packet_bg.jpeg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url(../image/yellow-outline-1.png) , url(../image/white-outline-1.png);
+  background-position: top center, bottom center;
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
 }
 
 /* .all-cards{
@@ -28,10 +28,9 @@ header ul li {
 
 .all-cards {
   background-image: url(../image/yellow_outline-2.png);
-  height: 50vh;
   background-repeat: no-repeat;
   width: 100%;
-  background-size: cover;
+  /* background-size: cover; */
 }
 
 
@@ -76,13 +75,24 @@ footer {
   scale: 1.5;
 }
 
-.banner-slider{
-  margin-top: -150px;
-  position: relative;
-  z-index: 9999;
-}
-
 .banner-slider .swiper-wrapper {
   padding: 150px 0 !important;
   z-index: 99;
+}
+
+@media screen and (max-width:768px) {
+  .banner-slider .swiper-slide-active {
+  scale: 3;
+}
+
+.banner-slider .swiper-slide-prev {
+  transform: translateX(-67%);
+  scale: 2;
+}
+
+.banner-slider .swiper-slide-next {
+  transform: translateX(67%);
+  scale: 2;
+}
+
 }

@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let f = gsap.timeline({
         scrollTrigger: {
             trigger: ".choose_us", // element that triggers the animation
-            start: "top 70%",           // when the top of trigger hits 80% of viewport
+            start: "top 80%",           // when the top of trigger hits 80% of viewport
             toggleActions: "play none none none", // play on enter only
             markers: false              // set to true if you want to see debug markers
         }
